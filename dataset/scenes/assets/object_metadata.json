@@ -1,0 +1,141 @@
+{
+  "dishware": [
+    {
+      "name": "mug",
+      "primitive": "cylinder",
+      "size": [
+        0.03,
+        0.05
+      ]
+    },
+    {
+      "name": "bowl",
+      "primitive": "cylinder",
+      "size": [
+        0.04,
+        0.02
+      ]
+    },
+    {
+      "name": "plate",
+      "primitive": "cylinder",
+      "size": [
+        0.06,
+        0.005
+      ]
+    },
+    {
+      "name": "cup",
+      "primitive": "cylinder",
+      "size": [
+        0.025,
+        0.04
+      ]
+    }
+  ],
+  "fruits": [
+    {
+      "name": "apple",
+      "primitive": "sphere",
+      "size": [
+        0.03
+      ]
+    },
+    {
+      "name": "orange",
+      "primitive": "sphere",
+      "size": [
+        0.035
+      ]
+    },
+    {
+      "name": "banana",
+      "primitive": "capsule",
+      "size": [
+        0.015,
+        0.08
+      ]
+    },
+    {
+      "name": "lemon",
+      "primitive": "ellipsoid",
+      "size": [
+        0.02,
+        0.025,
+        0.035
+      ]
+    }
+  ],
+  "vegetables": [
+    {
+      "name": "carrot",
+      "primitive": "capsule",
+      "size": [
+        0.01,
+        0.06
+      ]
+    },
+    {
+      "name": "potato",
+      "primitive": "ellipsoid",
+      "size": [
+        0.025,
+        0.02,
+        0.035
+      ]
+    },
+    {
+      "name": "tomato",
+      "primitive": "sphere",
+      "size": [
+        0.03
+      ]
+    }
+  ],
+  "toys": [
+    {
+      "name": "toy_block",
+      "primitive": "box",
+      "size": [
+        0.025,
+        0.025,
+        0.025
+      ]
+    },
+    {
+      "name": "toy_ball",
+      "primitive": "sphere",
+      "size": [
+        0.025
+      ]
+    },
+    {
+      "name": "toy_car",
+      "primitive": "box",
+      "size": [
+        0.04,
+        0.02,
+        0.015
+      ]
+    }
+  ],
+  "containers": [
+    {
+      "name": "small_bottle",
+      "primitive": "cylinder",
+      "size": [
+        0.02,
+        0.08
+      ]
+    },
+    {
+      "name": "small_box",
+      "primitive": "box",
+      "size": [
+        0.03,
+        0.04,
+        0.02
+      ]
+    }
+  ]
+}

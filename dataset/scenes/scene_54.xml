@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="gen3 scene">
+
+    
+    <compiler angle="radian" meshdir="assets" />
+
+    <default>
+        <joint damping="0.1" armature="0.01" />
+        <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" rgba="0.75294 0.75294 0.75294 1" />
+        </default>
+        <default class="collision">
+        <geom type="mesh" group="3" />
+        </default>
+        <default class="large_actuator">
+        <general gaintype="fixed" biastype="affine" gainprm="1000" biasprm="0 -1000 -200" forcerange="-39 39" />
+        </default>
+        <default class="small_actuator">
+        <general gaintype="fixed" biastype="affine" gainprm="1000" biasprm="0 -1000 -200" forcerange="-9 9" />
+        </default>
+        <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4" />
+        <general gaintype="fixed" biastype="affine" gainprm="1000" biasprm="0 -1000 -200" forcerange="-50 50" />
+    </default>
+
+    <option integrator="implicitfast" gravity="0 0 -9.81" />
+
+    <statistic center="0.4 0 0.5" extent="1.2" meansize="0.05" />
+
+    <visual>
+        <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0 0 0" />
+        <rgba haze="0.15 0.25 0.35 1" />
+        <global azimuth="120" elevation="-20" fovy="57" /> 
+    </visual>
+
+    <asset>
+        
+        <mesh name="base_link" file="base_link.stl" />
+        <mesh name="shoulder_link" file="shoulder_link.stl" />
+        <mesh name="half_arm_1_link" file="half_arm_1_link.stl" />
+        <mesh name="half_arm_2_link" file="half_arm_2_link.stl" />
+        <mesh name="forearm_link" file="forearm_link.stl" />
+        <mesh name="spherical_wrist_1_link" file="spherical_wrist_1_link.stl" />
+        <mesh name="spherical_wrist_2_link" file="spherical_wrist_2_link.stl" />
+        <mesh name="bracelet_with_vision_link" file="bracelet_with_vision_link.stl" />
+        
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+        
+        
+        <texture type="2d" name="groundplane1" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300" />
+        <texture type="2d" name="groundplane2" builtin="flat" rgb1="0.15 0.15 0.2" width="300" height="300" />
+        <texture type="2d" name="groundplane3" builtin="checker" mark="cross" rgb1="0.25 0.25 0.25" rgb2="0.35 0.35 0.35" markrgb="0.6 0.6 0.6" width="300" height="300" />
+        <texture type="2d" name="groundplane4" builtin="gradient" rgb1="0.4 0.4 0.5" rgb2="0.2 0.2 0.3" width="300" height="300" />
+        <texture type="2d" name="groundplane5" builtin="checker" mark="none" rgb1="0.3 0.2 0.2" rgb2="0.4 0.3 0.3" width="400" height="400" />
+        <texture type="2d" name="groundplane6" builtin="flat" rgb1="0.1 0.3 0.1" width="300" height="300" />
+        
+        <material name="groundplane1" texture="groundplane1" texuniform="true" texrepeat="8 8" reflectance="0.2" />
+        <material name="groundplane2" texture="groundplane2" texuniform="true" reflectance="0.1" />
+        <material name="groundplane3" texture="groundplane3" texuniform="true" texrepeat="6 6" reflectance="0.3" />
+        <material name="groundplane4" texture="groundplane4" texuniform="true" texrepeat="4 4" reflectance="0.15" />
+        <material name="groundplane5" texture="groundplane5" texuniform="true" texrepeat="10 10" reflectance="0.25" />
+        <material name="groundplane6" texture="groundplane6" texuniform="true" reflectance="0.05" />
+
+        
+        <texture type="2d" name="wood_tex1" builtin="checker" mark="edge" rgb1="0.6 0.4 0.2" rgb2="0.5 0.3 0.1" markrgb="0.7 0.5 0.3" width="100" height="100" />
+        <texture type="2d" name="wood_tex2" builtin="flat" rgb1="0.4 0.3 0.2" width="100" height="100" />
+        <texture type="2d" name="wood_tex3" builtin="checker" mark="none" rgb1="0.7 0.5 0.3" rgb2="0.6 0.4 0.2" width="100" height="100" />
+        <texture type="2d" name="wood_tex4" builtin="gradient" rgb1="0.8 0.6 0.4" rgb2="0.6 0.4 0.2" width="150" height="150" />
+        <texture type="2d" name="wood_tex5" builtin="checker" mark="cross" rgb1="0.5 0.35 0.2" rgb2="0.45 0.3 0.15" markrgb="0.6 0.45 0.3" width="120" height="120" />
+        <texture type="2d" name="marble_tex1" builtin="flat" rgb1="0.9 0.9 0.85" width="100" height="100" />
+        <texture type="2d" name="marble_tex2" builtin="gradient" rgb1="0.95 0.95 0.9" rgb2="0.85 0.85 0.8" width="100" height="100" />
+        <texture type="2d" name="metal_tex1" builtin="flat" rgb1="0.7 0.7 0.8" width="100" height="100" />
+        
+        <material name="wood_mat1" texture="wood_tex1" texuniform="true" texrepeat="4 4" reflectance="0.1" />
+        <material name="wood_mat2" texture="wood_tex2" texuniform="true" reflectance="0.05" />
+        <material name="wood_mat3" texture="wood_tex3" texuniform="true" texrepeat="5 5" reflectance="0.15" />
+        <material name="wood_mat4" texture="wood_tex4" texuniform="true" texrepeat="3 3" reflectance="0.12" />
+        <material name="wood_mat5" texture="wood_tex5" texuniform="true" texrepeat="6 6" reflectance="0.18" />
+        <material name="marble_mat1" texture="marble_tex1" texuniform="true" texrepeat="2 2" reflectance="0.4" />
+        <material name="marble_mat2" texture="marble_tex2" texuniform="true" texrepeat="2 2" reflectance="0.35" />
+        <material name="metal_mat1" texture="metal_tex1" texuniform="true" texrepeat="8 8" reflectance="0.6" />
+        
+        
+        <texture type="2d" name="red_tex" builtin="flat" rgb1="0.8 0.2 0.2" width="50" height="50" />
+        <texture type="2d" name="blue_tex" builtin="flat" rgb1="0.2 0.2 0.8" width="50" height="50" />
+        <texture type="2d" name="green_tex" builtin="flat" rgb1="0.2 0.8 0.2" width="50" height="50" />
+        <texture type="2d" name="yellow_tex" builtin="flat" rgb1="0.8 0.8 0.2" width="50" height="50" />
+        <texture type="2d" name="purple_tex" builtin="flat" rgb1="0.8 0.2 0.8" width="50" height="50" />
+        <texture type="2d" name="orange_tex" builtin="flat" rgb1="0.8 0.5 0.2" width="50" height="50" />
+        <texture type="2d" name="cyan_tex" builtin="flat" rgb1="0.2 0.8 0.8" width="50" height="50" />
+        <texture type="2d" name="pink_tex" builtin="flat" rgb1="0.8 0.4 0.6" width="50" height="50" />
+        <texture type="2d" name="brown_tex" builtin="flat" rgb1="0.6 0.4 0.2" width="50" height="50" />
+        <texture type="2d" name="gray_tex" builtin="flat" rgb1="0.5 0.5 0.5" width="50" height="50" />
+        <texture type="2d" name="white_tex" builtin="flat" rgb1="0.9 0.9 0.9" width="50" height="50" />
+        <texture type="2d" name="black_tex" builtin="flat" rgb1="0.2 0.2 0.2" width="50" height="50" />
+        
+        
+        <texture type="2d" name="stripe_tex1" builtin="checker" mark="edge" rgb1="0.8 0.2 0.2" rgb2="0.9 0.3 0.3" markrgb="0.7 0.1 0.1" width="50" height="50" />
+        <texture type="2d" name="stripe_tex2" builtin="checker" mark="edge" rgb1="0.2 0.2 0.8" rgb2="0.3 0.3 0.9" markrgb="0.1 0.1 0.7" width="50" height="50" />
+        <texture type="2d" name="dots_tex1" builtin="checker" mark="cross" rgb1="0.2 0.8 0.2" rgb2="0.3 0.9 0.3" markrgb="0.1 0.7 0.1" width="50" height="50" />
+        
+        <material name="object_red" texture="red_tex" texuniform="true" reflectance="0.1" />
+        <material name="object_blue" texture="blue_tex" texuniform="true" reflectance="0.1" />
+        <material name="object_green" texture="green_tex" texuniform="true" reflectance="0.1" />
+        <material name="object_yellow" texture="yellow_tex" texuniform="true" reflectance="0.15" />
+        <material name="object_purple" texture="purple_tex" texuniform="true" reflectance="0.1" />
+        <material name="object_orange" texture="orange_tex" texuniform="true" reflectance="0.12" />
+        <material name="object_cyan" texture="cyan_tex" texuniform="true" reflectance="0.2" />
+        <material name="object_pink" texture="pink_tex" texuniform="true" reflectance="0.15" />
+        <material name="object_brown" texture="brown_tex" texuniform="true" reflectance="0.05" />
+        <material name="object_gray" texture="gray_tex" texuniform="true" reflectance="0.3" />
+        <material name="object_white" texture="white_tex" texuniform="true" reflectance="0.4" />
+        <material name="object_black" texture="black_tex" texuniform="true" reflectance="0.02" />
+        <material name="object_stripe_red" texture="stripe_tex1" texuniform="true" texrepeat="4 4" reflectance="0.1" />
+        <material name="object_stripe_blue" texture="stripe_tex2" texuniform="true" texrepeat="4 4" reflectance="0.1" />
+        <material name="object_dots_green" texture="dots_tex1" texuniform="true" texrepeat="6 6" reflectance="0.1" />
+    <mesh name="object_0" file="minion.stl" scale="0.00039999999999999996 0.00039999999999999996 0.00039999999999999996" /><mesh name="object_1" file="computer_mouse.stl" scale="0.0004333333333333333 0.0004333333333333333 0.0004333333333333333" /><mesh name="object_2" file="banana.stl" scale="0.0003333333333333333 0.0003333333333333333 0.0003333333333333333" /><mesh name="object_3" file="cap.stl" scale="0.0006666666666666666 0.0006666666666666666 0.0006666666666666666" /></asset>
+
+    <worldbody>
+        
+        <geom name="floor" size="0 0 0.05" type="plane" material="groundplane2" />
+
+        
+        <geom name="table" type="box" size="0.5 0.4 0.02" pos="0.6 0.08 0.43" material="metal_mat1" />
+
+        
+        <geom name="table_leg1" type="cylinder" size="0.02 0.21" pos="0.19999999999999996 0.38 0.21" rgba="0.4 0.2 0.1 1" />
+        <geom name="table_leg2" type="cylinder" size="0.02 0.21" pos="1.0 0.38 0.21" rgba="0.4 0.2 0.1 1" />
+        <geom name="table_leg3" type="cylinder" size="0.02 0.21" pos="0.19999999999999996 -0.21999999999999997 0.21" rgba="0.4 0.2 0.1 1" />
+        <geom name="table_leg4" type="cylinder" size="0.02 0.21" pos="1.0 -0.21999999999999997 0.21" rgba="0.4 0.2 0.1 1" />
+        
+        
+        <body name="base_link" pos="0.2 0 0.45">
+        <inertial pos="-0.000648 -0.000166 0.084487" quat="0.999294 0.00139618 -0.0118387 0.035636" mass="1.697" diaginertia="0.00462407 0.00449437 0.00207755" />
+        <geom class="visual" mesh="base_link" />
+        <geom class="collision" mesh="base_link" />
+        <body name="shoulder_link" pos="0 0 0.15643" quat="0 1 0 0">
+            <inertial pos="-2.3e-05 -0.010364 -0.07336" quat="0.707051 0.0451246 -0.0453544 0.704263" mass="1.3773" diaginertia="0.00488868 0.00457 0.00135132" />
+            <joint name="joint_1" range="-6.2832 6.2832" limited="true" armature="0.1" />
+            <geom class="visual" mesh="shoulder_link" />
+            <geom class="collision" mesh="shoulder_link" />
+            <body name="half_arm_1_link" pos="0 0.005375 -0.12838" quat="1 1 0 0">
+            <inertial pos="-4.4e-05 -0.09958 -0.013278" quat="0.482348 0.516286 -0.516862 0.483366" mass="1.1636" diaginertia="0.0113017 0.011088 0.00102532" />
+            <joint name="joint_2" range="-2.2 2.2" limited="true" armature="0.1" />
+            <geom class="visual" mesh="half_arm_1_link" />
+            <geom class="collision" mesh="half_arm_1_link" />
+            <body name="half_arm_2_link" pos="0 -0.21038 -0.006375" quat="1 -1 0 0">
+                <inertial pos="-4.4e-05 -0.006641 -0.117892" quat="0.706144 0.0213722 -0.0209128 0.707437" mass="1.1636" diaginertia="0.0111633 0.010932 0.00100671" />
+                <joint name="joint_3" range="-6.2832 6.2832" limited="true" armature="0.1" />
+                <geom class="visual" mesh="half_arm_2_link" />
+                <geom class="collision" mesh="half_arm_2_link" />
+                <body name="forearm_link" pos="0 0.006375 -0.21038" quat="1 1 0 0">
+                <inertial pos="-1.8e-05 -0.075478 -0.015006" quat="0.483678 0.515961 -0.515859 0.483455" mass="0.9302" diaginertia="0.00834839 0.008147 0.000598606" />
+                <joint name="joint_4" range="-2.5656 2.5656" limited="true" armature="0.1" />
+                <geom class="visual" mesh="forearm_link" />
+                <geom class="collision" mesh="forearm_link" />
+                <body name="spherical_wrist_1_link" pos="0 -0.20843 -0.006375" quat="1 -1 0 0">
+                    <inertial pos="1e-06 -0.009432 -0.063883" quat="0.703558 0.0707492 -0.0707492 0.703558" mass="0.6781" diaginertia="0.00165901 0.001596 0.000346988" />
+                    <joint name="joint_5" range="-6.2832 6.2832" limited="true" armature="0.1" />
+                    <geom class="visual" mesh="spherical_wrist_1_link" />
+                    <geom class="collision" mesh="spherical_wrist_1_link" />
+                    <body name="spherical_wrist_2_link" pos="0 0.00017505 -0.10593" quat="1 1 0 0">
+                    <inertial pos="1e-06 -0.045483 -0.00965" quat="0.44426 0.550121 -0.550121 0.44426" mass="0.6781" diaginertia="0.00170087 0.001641 0.00035013" />
+                    <joint name="joint_6" range="-2.05 2.05" limited="true" armature="0.1" />
+                    <geom class="visual" mesh="spherical_wrist_2_link" />
+                    <geom class="collision" mesh="spherical_wrist_2_link" />
+                    <body name="bracelet_link" pos="0 -0.10593 -0.00017505" quat="1 -1 0 0">
+                        <inertial pos="0.000281 0.011402 -0.029798" quat="0.394358 0.596779 -0.577293 0.393789" mass="0.5" diaginertia="0.000657336 0.000587019 0.000320645" />
+                        <joint name="joint_7" range="-6.2832 6.2832" limited="true" armature="0.1" />
+                        <geom class="visual" mesh="bracelet_with_vision_link" />
+                        <geom class="collision" mesh="bracelet_with_vision_link" />
+                        
+                        
+                        
+                        <camera name="wrist" pos="0 -0.05639 -0.058475" quat="0 0 0 1" fovy="60" resolution="1280 720" />  
+                        
+                        
+                        <site name="pinch_site" pos="0 0 -0.121525" quat="0 1 0 0" />
+                    </body>
+                    </body>
+                </body>
+                </body>
+            </body>
+            </body>
+        </body>
+        </body>
+    <light pos="0.8 0.3 1.8" directional="true" diffuse="0.7700311654582723 0.6795739960487919 0.6402113412275222" /><light pos="0.5 -0.5 1.3" diffuse="0.3907737273846639 0.48584597930544854 0.43357562083207757" /><light pos="0.2 1.0 1.0" diffuse="0.2777713205315272 0.34578527135937465 0.30083913434150844" /><body name="object_0" pos="0.533668391266593 0.08421137214494069 0.47359999999999997" quat="0 0 0.0 1.0"><freejoint name="object_0_joint" /><geom name="object_0_visual" type="mesh" mesh="object_0" material="object_black" group="2" contype="0" conaffinity="0" /><geom name="object_0_collision" type="mesh" mesh="object_0" group="3" friction="0.8 0.02 0.001" density="1000" solref="0.01 1" solimp="0.9 0.95 0.001" /></body><body name="object_1" pos="0.7346457197391273 0.1388339280448811 0.47389999999999993" quat="0 0 0.0 1.0"><freejoint name="object_1_joint" /><geom name="object_1_visual" type="mesh" mesh="object_1" material="object_stripe_blue" group="2" contype="0" conaffinity="0" /><geom name="object_1_collision" type="mesh" mesh="object_1" group="3" friction="0.8 0.02 0.001" density="1000" solref="0.01 1" solimp="0.9 0.95 0.001" /></body><body name="object_2" pos="0.4922271209280783 0.05447994505495629 0.473" quat="0 0 0.0 1.0"><freejoint name="object_2_joint" /><geom name="object_2_visual" type="mesh" mesh="object_2" material="object_orange" group="2" contype="0" conaffinity="0" /><geom name="object_2_collision" type="mesh" mesh="object_2" group="3" friction="0.8 0.02 0.001" density="1000" solref="0.01 1" solimp="0.9 0.95 0.001" /></body><body name="object_3" pos="0.6747914076046463 0.028158566512638088 0.476" quat="0 0 0.0 1.0"><freejoint name="object_3_joint" /><geom name="object_3_visual" type="mesh" mesh="object_3" material="object_purple" group="2" contype="0" conaffinity="0" /><geom name="object_3_collision" type="mesh" mesh="object_3" group="3" friction="0.8 0.02 0.001" density="1000" solref="0.01 1" solimp="0.9 0.95 0.001" /></body></worldbody>
+
+    <actuator>
+        <general class="large_actuator" name="joint_1" joint="joint_1" ctrlrange="-6.2832 6.2832" />
+        <general class="large_actuator" name="joint_2" joint="joint_2" ctrlrange="-2.2 2.2" />
+        <general class="large_actuator" name="joint_3" joint="joint_3" ctrlrange="-6.2832 6.2832" />
+        <general class="large_actuator" name="joint_4" joint="joint_4" ctrlrange="-2.5656 2.5656" />
+        <general class="small_actuator" name="joint_5" joint="joint_5" ctrlrange="-6.2832 6.2832" />
+        <general class="small_actuator" name="joint_6" joint="joint_6" ctrlrange="-2.05 2.05" />
+        <general class="small_actuator" name="joint_7" joint="joint_7" ctrlrange="-6.2832 6.2832" />
+    </actuator>
+
+    
+    
+
+    </mujoco>
